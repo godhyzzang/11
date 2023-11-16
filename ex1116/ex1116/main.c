@@ -1,29 +1,28 @@
 #include <stdio.h>
 
 
-//void swap(int* x, int* y) {
-//	int* temp;
-//	temp = x;
-//	x = y;
-//	y = temp;
-//
-//}
-
-void swap(int* x, int* y) {
-	int temp;
-	temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
 int main(void) {
 	
-	int a = 3;
-	int b = 5;
-	swap(&a, &b); //함수 안에서 return값을 Swap하는게 아니라 main함수 자체의 a,b 값을 swap하게 됨.
+	int i;
+	int grade[5];
+	int average=0;
 
-	printf("a :%i, b:%i\n", a,b);
+	for (i = 0; i < 5;i++) {
+		printf("input grade[%i] = ",i);
+		scanf("%d", &grade[i]);
+
+	}
 	
+	//int* pa =grade;
+	for (i = 0; i < 5; i++) {
+		//printf("grade[%i] = %i\n", i, *(pa++));
+		printf("grade[%i] = %i\n", i, *(grade+i)); //같은 의미
+		//average = average + *pa;
+		average = average + *(grade+i);
+
+	}
+	printf("Average = %i\n", average/5);
+
 	
 	return 0;
 }
