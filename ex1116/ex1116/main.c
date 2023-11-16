@@ -1,16 +1,12 @@
 #include <stdio.h>
 
 int main(void) {
-	int i = 10;
-	char c = 'a';
-	int* iptr=&i;
-	char* cptr= &c;
-	int* iptr2 = iptr;
-
 	
-	printf("i : % p\n % p(size: % i)\n", iptr, &i, sizeof(iptr)); 
-	// 64bit 체계 visual studio를 사용하면 포인터의 크기가 4byte가 아닌 8byte가 나올 수도 있다.
-	printf("c : % p\n % p(size: % i)\n", cptr, &c, sizeof(cptr));
-	printf("iptr2 : % p, % i\n", iptr2, *iptr2);
+	
+		int i = 300; //300으로 변경해서도 해보기
+		int* pi = &i; //int형을 담으려면 int형 포인터변수를 사용해야한다.
+		char* pc = &i; //char형 변수를 가리키는 포인터변수이므로 300을 모두 담지 못 함 
+		printf("% i, % i, % i\n" , i, *pi, *pc);
+	
 	return 0;
 }
