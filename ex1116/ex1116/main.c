@@ -3,26 +3,19 @@
 
 int main(void) {
 	
-	int i;
-	int grade[5];
-	int average=0;
+	char* pc;
+	int* pi;
+	double* pd;
 
-	for (i = 0; i < 5;i++) {
-		printf("input grade[%i] = ",i);
-		scanf("%d", &grade[i]);
+	pc = (char*)10000; //10000번지를 가리키겠다.
+	pi = (int*)10000;
+	pd = (double*)10000;
 
-	}
-	
-	//int* pa =grade;
-	for (i = 0; i < 5; i++) {
-		//printf("grade[%i] = %i\n", i, *(pa++));
-		printf("grade[%i] = %i\n", i, *(grade+i)); //같은 의미
-		//average = average + *pa;
-		average = average + *(grade+i);
-
-	}
-	printf("Average = %i\n", average/5);
-
+	printf("증가 전 : pc = % d, pi = % d, pd = % d\n", pc, pi, pd);
+	pc++;
+	pi++;
+	pd++;
+	printf("증가 후 : pc = % d, pi = % d, pd = % d\n", pc, pi, pd);
 	
 	return 0;
 }
