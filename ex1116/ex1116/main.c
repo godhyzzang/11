@@ -1,12 +1,29 @@
 #include <stdio.h>
 
+
+//void swap(int* x, int* y) {
+//	int* temp;
+//	temp = x;
+//	x = y;
+//	y = temp;
+//
+//}
+
+void swap(int* x, int* y) {
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
 int main(void) {
 	
+	int a = 3;
+	int b = 5;
+	swap(&a, &b); //함수 안에서 return값을 Swap하는게 아니라 main함수 자체의 a,b 값을 swap하게 됨.
+
+	printf("a :%i, b:%i\n", a,b);
 	
-		int i = 300; //300으로 변경해서도 해보기
-		int* pi = &i; //int형을 담으려면 int형 포인터변수를 사용해야한다.
-		char* pc = &i; //char형 변수를 가리키는 포인터변수이므로 300을 모두 담지 못 함 
-		printf("% i, % i, % i\n" , i, *pi, *pc);
 	
 	return 0;
 }
